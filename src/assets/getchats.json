@@ -1,0 +1,123 @@
+[
+  {
+    "id": "1",
+    "name": "Dan Abrahmov",
+    "imgAvatar": "https://bit.ly/dan-abramov",
+    "isConnected": true,
+    "isGroup": false,
+    "groupMembers": [
+      { "name": "Dan Abrahmov", "imgAvatar": "https://bit.ly/dan-abramov" }
+    ],
+    "date": 1675045586000,
+    "message": "//esta madre se tiene que mapear //son 3 secciones y 2 modos, abierto cerrado abierto | avatar estado | nombre y mensajehora | icono leido|     cerrado | avatar estado | //en hover se agrega un menu ... tal vez"
+  },
+  {
+    "id": "2",
+    "name": "Dan Abrahmov",
+    "imgAvatar": "https://bit.ly/dan-abramov",
+    "isConnected": false,
+    "isGroup": true,
+    "groupMembers": [
+      { "name": "Dan Abrahmov", "imgAvatar": "https://bit.ly/dan-abramov" },
+      {
+        "name": "Kola Kioluwani",
+        "imgAvatar": "https://bit.ly/tioluwani-kolawole"
+      },
+      { "name": "Kent Dodds", "imgAvatar": "https://bit.ly/kent-c-dodds" },
+      { "name": "Ryan Florence", "imgAvatar": "https://bit.ly/ryan-florence" }
+    ],
+    "date": 1675045586000,
+    "message": "aydiosito"
+  },
+  {
+    "id": "3",
+    "name": "Kola Kioluwani",
+    "imgAvatar": "https://bit.ly/tioluwani-kolawole",
+    "isConnected": true,
+    "isGroup": true,
+    "groupMembers": [
+      {
+        "name": "Kola Kioluwani",
+        "imgAvatar": "https://bit.ly/tioluwani-kolawole"
+      },
+      { "name": "Segun Adebayo", "imgAvatar": "https://bit.ly/sage-adebayo" }
+    ],
+    "date": 1675035586000,
+    "message": "Mañana te la pago wey, te lo juro"
+  },
+  {
+    "id": "4",
+    "name": "Kent Dodds",
+    "imgAvatar": "https://bit.ly/kent-c-dodds",
+    "isConnected": false,
+    "isGroup": false,
+    "groupMembers": [
+      { "name": "Kent Dodds", "imgAvatar": "https://bit.ly/kent-c-dodds" }
+    ],
+    "date": 1675025586000,
+    "message": "aydiosito2222222222222"
+  },
+  {
+    "id": "5",
+    "name": "Ryan Florence",
+    "imgAvatar": "https://bit.ly/ryan-florence",
+    "isConnected": false,
+    "isGroup": false,
+    "groupMembers": [
+      { "name": "Ryan Florence", "imgAvatar": "https://bit.ly/ryan-florence" }
+    ],
+    "date": 1675015586000,
+    "message": "aydiosito11"
+  },
+  {
+    "id": "6",
+    "name": "Prosper Otemuyiwa",
+    "imgAvatar": "https://bit.ly/prosper-baba",
+    "isConnected": false,
+    "isGroup": false,
+    "groupMembers": [
+      {
+        "name": "Prosper Otemuyiwa",
+        "imgAvatar": "https://bit.ly/prosper-baba"
+      }
+    ],
+    "date": 1675005586000,
+    "message": "aydiosito555"
+  },
+  {
+    "id": "7",
+    "name": "Christian Nwamba",
+    "imgAvatar": "https://bit.ly/code-beast",
+    "isConnected": true,
+    "isGroup": false,
+    "groupMembers": [
+      { "name": "Christian Nwamba", "imgAvatar": "https://bit.ly/code-beast" }
+    ],
+    "date": 1674945586000,
+    "message": "aydiosito8878"
+  },
+  {
+    "id": "8",
+    "name": "Segun Adebayo",
+    "imgAvatar": "https://bit.ly/sage-adebayo",
+    "isConnected": true,
+    "isGroup": false,
+    "groupMembers": [
+      { "name": "Segun Adebayo", "imgAvatar": "https://bit.ly/sage-adebayo" }
+    ],
+    "date": 1674045586000,
+    "message": "mira wey estas bien pendejo, al chile"
+  },
+  {
+    "id": "9",
+    "name": "Dan Abrahmov",
+    "imgAvatar": "https://bit.ly/dan-abramov",
+    "isConnected": true,
+    "isGroup": false,
+    "groupMembers": [
+      { "name": "Dan Abrahmov", "imgAvatar": "https://bit.ly/dan-abramov" }
+    ],
+    "date": 1634045586000,
+    "message": "queso plabas xd"
+  }
+]
