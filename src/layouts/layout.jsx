@@ -1,4 +1,6 @@
+import { useContext, useState, useEffect, setisLoggedIn } from "react";
 import {
+  useColorModeValue,
   useColorMode,
   Grid,
   GridItem,
@@ -11,45 +13,80 @@ import {
   Divider,
   Spacer,
   Button,
+  StackDivider,
+  Avatar,
+  Show,
+  Hide,
 } from "@chakra-ui/react";
 
-import { useContext, useState, useEffect } from "react";
 import { Context } from "../context/Context";
 
 import { DrawerMenu } from "../components/DrawerMenu";
+import { ModalLogin } from "../components/ModalLogin";
 import { ChatsList } from "../components/ChatsList";
+import { SideMenu } from "../components/SideMenu";
+import { RightPanel } from "../components/RightPanel";
 
 function Layout() {
-  const { colorMode, toggleColorMode } = useColorMode();
+  const {
+    userData,
+    setgifts,
+    isLoggedIn,
+    toggleisLoggedIn,
+    handleisOpenRightPanel,
+  } = useContext(Context);
+
+  const bgSidePanel = useColorModeValue("gray.50", "gray.900");
+
   return (
     <div className="App">
-      <Button colorScheme="brand" size="lg" onClick={toggleColorMode}>
-        Toggle {colorMode === "light" ? "Dark" : "Light"}
-      </Button>
-      <Grid width="100vw" templateColumns="repeat(12, 1fr)">
-        <GridItem colSpan={2} bg="" minW="336px">
-          <VStack p={1}>
-            <DrawerMenu />
-            <ChatsList />
+      {!isLoggedIn && <ModalLogin />}
+      <Flex width="100vw" height="100vh">
+        <Flex>
+          <SideMenu />
+          <Box minW="360px" w="360px" bg={bgSidePanel}>
+            <VStack p={1}>
+              <DrawerMenu />
+              <ChatsList />
+            </VStack>
+          </Box>
+        </Flex>
+
+        <Flex flex="1">
+          <VStack flex="1">
+            <Box alignSelf={"flex-end"} margin="2">
+              <Button onClick={() => handleisOpenRightPanel()}>
+                Open rght panel
+              </Button>
+            </Box>
+            <Divider />
+            <Box>
+              <Button
+                onClick={() => {
+                  console.log(Object.keys(userData).length);
+                  console.log(userData);
+                }}
+              >
+                Aywey
+              </Button>
+
+              <p>Default nada</p>
+              <p>aparece chat</p>
+              <p>(header) foto nombre y hace cuanto activo</p>
+              <p>(Body) chat globos con hora</p>
+              <p>(footer) (enviar media)(escribir mensaje)(enviar)</p>
+              <p>aparece chat</p>
+            </Box>
           </VStack>
-        </GridItem>
-        <GridItem colSpan={7} bg="blue.200">
-          <p>Default nada</p>
-          <p>aparece chat</p>
-          <p>(header) foto nombre y hace cuanto activo</p>
-          <p>(Body) chat globos con hora</p>
-          <p>(footer) (enviar media)(escribir mensaje)(enviar)</p>
-          <p>aparece chat</p>
-        </GridItem>
-        <GridItem colSpan={3} bg="pink.300">
-          <p>Default nada, funcioa como drawer de chats</p>
-          <p>(header chat) foto nombre y hace cuanto activo mas grande</p>
-          <p>(header grupo) (foto nombre grupo) y hace cuanto activo</p>
-          <p>(body) media files y links</p>
-        </GridItem>
-      </Grid>
+        </Flex>
+        <Flex bg={bgSidePanel}>
+          <RightPanel />
+        </Flex>
+      </Flex>
     </div>
   );
 }
 
 export default Layout;
+
+//{!isLoggedIn && <ModalLogin />}

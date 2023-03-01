@@ -1,0 +1,74 @@
+[
+  {
+    "nickName": "Dan Abrahmov",
+    "firstName": "Dan",
+    "lastName": "Abrahmov",
+    "avatar": "https://bit.ly/dan-abramov",
+    "isPublic": true,
+    "isHided": false,
+    "isTest": true
+  },
+  {
+    "nickName": "El Test Bot",
+    "firstName": "Test",
+    "lastName": "Bot",
+    "avatar": "https://cdn-icons-png.flaticon.com/512/4711/4711987.png",
+    "isPublic": true,
+    "isHided": false,
+    "isTest": true
+  },
+  {
+    "nickName": "Kola Kioluwani",
+    "firstName": "Kola",
+    "lastName": "Kioluwani",
+    "avatar": "https://bit.ly/tioluwani-kolawole",
+    "isPublic": true,
+    "isHided": false,
+    "isTest": true
+  },
+  {
+    "nickName": "Kent Dodds",
+    "firstName": "Kent",
+    "lastName": "Dodds",
+    "avatar": "https://bit.ly/kent-c-dodds",
+    "isPublic": true,
+    "isHided": false,
+    "isTest": true
+  },
+  {
+    "nickName": "Ryan Florence",
+    "firstName": "Ryan",
+    "lastName": "Florence",
+    "avatar": "https://bit.ly/ryan-florence",
+    "isPublic": true,
+    "isHided": false,
+    "isTest": true
+  },
+  {
+    "nickName": "Prosper Otemuyiwa",
+    "firstName": "Prosper",
+    "lastName": "Otemuyiwa",
+    "avatar": "https://bit.ly/prosper-baba",
+    "isPublic": true,
+    "isHided": false,
+    "isTest": true
+  },
+  {
+    "nickName": "Christian Nwamba",
+    "firstName": "Christian",
+    "lastName": "Nwamba",
+    "avatar": "https://bit.ly/code-beast",
+    "isPublic": true,
+    "isHided": false,
+    "isTest": true
+  },
+  {
+    "nickName": "Segun Adebayo",
+    "firstName": "Segun",
+    "lastName": "Adebayo",
+    "avatar": "https://bit.ly/sage-adebayo",
+    "isPublic": true,
+    "isHided": false,
+    "isTest": true
+  }
+]

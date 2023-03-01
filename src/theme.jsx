@@ -46,19 +46,40 @@ const themes = extendTheme({
 
           _hover: {
             transform: "scale(1.2)",
-            svg: { color: "gray.200" },
+            svg: { color: mode("gray.600", "gray.200")(props) },
             color: "blue.600",
           },
 
           _active: {
-            svg: { color: "blue.800" },
-            bg: "gray.700",
+            svg: { color: mode("gray.400", "gray.100")(props) },
+            bg: mode("gray.200", "gray.800")(props),
           },
         }),
         drawer: (props) => ({
           bg: props.isActive ? "gray.600" : "gray.700",
           svg: {
             color: props.isActive ? "white" : "white",
+          },
+        }),
+      },
+    },
+    Card: {
+      container: {
+        backgroundColor: "#e7e7e7",
+      },
+      variants: {
+        testList: (props) => ({
+          container: {
+            borderRadius: "8px",
+          },
+          body: {
+            backgroundColor: mode("gray.100", "gray.600")(props),
+            borderRadius: "8px",
+            _hover: {
+              transform: "scale(1.02)",
+              backgroundColor: mode("gray.300", "gray.500")(props),
+              cursor: "pointer",
+            },
           },
         }),
       },

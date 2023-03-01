@@ -1,7 +1,10 @@
 import { useState, useContext, useRef, useEffect } from "react";
 import { Context } from "../context/Context.jsx";
+import axios from "axios";
 
 import {
+  useColorModeValue,
+  useColorMode,
   useDisclosure,
   Button,
   Input,
@@ -12,21 +15,28 @@ import {
   DrawerOverlay,
   DrawerContent,
   DrawerCloseButton,
-  Stack,
   InputGroup,
   InputLeftElement,
   InputRightElement,
   FormControl,
   FormErrorMessage,
   IconButton,
+  color,
+  Avatar,
+  Stack,
   HStack,
+  VStack,
+  Box,
 } from "@chakra-ui/react";
 import { HamburgerIcon, SearchIcon } from "@chakra-ui/icons";
 
 function DrawerMenu(props) {
-  const { gifts, addGift, updateGift } = useContext(Context);
+  const { userData, logOut } = useContext(Context);
+  const { colorMode, toggleColorMode } = useColorMode();
 
   const { isOpen, onOpen, onClose } = useDisclosure();
+
+  const bgInput = useColorModeValue("white", "gray.800");
 
   const [formData, setFormData] = useState({
     id: "",
@@ -131,12 +141,12 @@ function DrawerMenu(props) {
           padding="-14"
         />
 
-        <InputGroup size="xs" bg="gray.700">
+        <InputGroup size="xs" bg={bgInput}>
           <InputLeftElement
             pointerEvents="none"
             children={<SearchIcon color="gray.300" />}
           />
-          <Input placeholder="Search"></Input>
+          <Input placeholder="Search" borderRadius={5}></Input>
         </InputGroup>
       </HStack>
 
@@ -146,113 +156,42 @@ function DrawerMenu(props) {
         onClose={handleClose}
         initialFocusRef={true === true ? secondField : firstField}
         finalFocusRef={btnRef}
+        size={"xs"}
       >
         <DrawerOverlay />
         <DrawerContent>
-          <DrawerCloseButton />
-          <DrawerHeader>"al chile no se"</DrawerHeader>
-
           <DrawerBody>
-            <Stack as="form" onSubmit={handleSubmit} spacing="3">
-              <FormControl isInvalid={isError}>
-                <InputGroup>
-                  <InputLeftElement
-                    pointerEvents="none"
-                    color="gray.300"
-                    fontSize="1.2em"
-                    children="🎁"
+            <VStack alignItems="flex-start">
+              <Box>
+                <Box>
+                  <Avatar
+                    size="md"
+                    name={userData.nickName}
+                    src={userData.avatar}
                   />
-                  <Input
-                    ref={firstField}
-                    placeholder="what do you wish?"
-                    type="text"
-                    name="gift"
-                    value={formData.gift}
-                    onChange={handleChange}
-                  />
-                </InputGroup>
-                {isError && (
-                  <FormErrorMessage fontSize="xs">
-                    Gift is required.
-                  </FormErrorMessage>
-                )}
-              </FormControl>
-              <InputGroup marginTop="3">
-                <InputLeftElement
-                  pointerEvents="none"
-                  color="gray.300"
-                  fontSize="1.2em"
-                  children="#️⃣"
-                />
-                <Input
-                  ref={secondField}
-                  placeholder="How many?"
-                  type="number"
-                  name="units"
-                  value={formData.units}
-                  onChange={handleChange}
-                />
-              </InputGroup>
-              <InputGroup>
-                <InputLeftElement
-                  pointerEvents="none"
-                  color="gray.300"
-                  fontSize="1.2em"
-                  children="🫅"
-                />
-                <Input
-                  placeholder="Who receive?"
-                  type="text"
-                  name="receiver"
-                  value={formData.receiver}
-                  onChange={handleChange}
-                />
-              </InputGroup>
-              <InputGroup>
-                <InputLeftElement
-                  pointerEvents="none"
-                  color="gray.300"
-                  fontSize="1.2em"
-                  children="🖼️"
-                />
-                <Input
-                  placeholder="Image link (URL)"
-                  type="text"
-                  name="picture"
-                  value={formData.picture}
-                  onChange={handleChange}
-                />
-              </InputGroup>
-              <InputGroup>
-                <InputLeftElement
-                  pointerEvents="none"
-                  color="gray.300"
-                  fontSize="1.2em"
-                  children="🪙"
-                />
-                <Input
-                  placeholder="What's the Price?"
-                  type="number"
-                  name="price"
-                  value={formData.price}
-                  onChange={handleChange}
-                />
-              </InputGroup>
-            </Stack>
-          </DrawerBody>
+                </Box>
+                <Box>{userData.nickName}</Box>
+                <Box>{userData.bio ? userData.bio : "set Bio"}</Box>
+              </Box>
 
+              <Box>
+                <Button colorScheme="brand" size="lg" onClick={toggleColorMode}>
+                  Toggle {colorMode === "light" ? "Dark" : "Light"}
+                </Button>
+                <Button
+                  colorScheme="brand"
+                  size="lg"
+                  onClick={async () => {
+                    logOut();
+                  }}
+                >
+                  Log out
+                </Button>
+              </Box>
+            </VStack>
+          </DrawerBody>
           <DrawerFooter>
-            <Button
-              colorScheme="brand"
-              variant="outline"
-              mr={3}
-              onClick={handleClose}
-            >
-              Cancel
-            </Button>
-            <Button colorScheme="brand" onClick={handleSubmit}>
-              Accept
-            </Button>
+            Messenger Desktop Version 0.0.0 x64 - About
           </DrawerFooter>
         </DrawerContent>
       </Drawer>
